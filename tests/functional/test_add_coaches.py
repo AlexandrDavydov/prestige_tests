@@ -1,8 +1,6 @@
 from pages.add_coach_page import AddCoachPage
 from pages.coaches_page import CoachesPage
 from pages.main_page import MainPage
-from pages.students_page import StudentsPage
-
 
 def test_add_students(driver):
     coaches = [
@@ -48,16 +46,8 @@ def test_add_students(driver):
         page = CoachesPage(driver)
         page.go_to_add_coach()
         page=AddCoachPage(driver)
-        page.fill_form(coach["last_name"],
-            first_name=coach["first_name"],
-            middle_name=coach["middle_name"],
-            contacts=coach["contacts"],
-            birthday=coach["birthday"],
-            lessons_count=coach["lessons_count"],
-            lessons_paid=coach["lessons_paid"],
-            student_payment=coach["student_payment"],
-            additional_info=coach["additional_info"]
-        )
+        page.fill_form(coach["last_name"], coach["first_name"], coach["middle_name"], coach["contacts"],coach["birthday"],
+            coach["lessons_count"], coach["lessons_paid"], coach["student_payment"],coach["additional_info"])
         page.submit()
 
     page = CoachesPage(driver)

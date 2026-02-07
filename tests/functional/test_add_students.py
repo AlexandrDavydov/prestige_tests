@@ -41,20 +41,13 @@ def test_add_students(driver):
         page = StudentsPage(driver)
         page.go_to_add_student()
         page=AddStudentPage(driver)
-        page.fill_form(
-            last_name=student["last_name"],
-            first_name=student["first_name"],
-            middle_name=student["middle_name"],
-            contacts=student["contacts"],
-            birthday=student["birthday"],
-            lessons_count=student["lessons_count"],
-            additional_info=student["additional_info"]
-        )
+        page.fill_form(student["last_name"], student["first_name"], student["middle_name"], student["contacts"],
+            student["birthday"], student["lessons_count"], student["additional_info"])
         page.save()
 
     page = StudentsPage(driver)
     for student in students:
-        assert page.is_student_present_flexible(student)
+        assert page.is_data_present_flexible(student)
 
     page.has_number_of_rows(len(students))
 

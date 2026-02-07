@@ -1,44 +1,76 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from pages.base_page import BasePage
 
 
-class CardsPage:
+class CardsPage(BasePage):
     URL = "http://127.0.0.1:5000/cards"
 
-    # локаторы
+    # ===== Локаторы =====
     ADD_CARD_LINK = (By.LINK_TEXT, "Добавить Абонемент")
-    HOME_LINK = (By.LINK_TEXT, "Главная")
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
+    HOME_LINK = (By.LINK_TEXT, "Главная")
 
     def __init__(self, driver):
         self.driver = driver
 
-    # -------- actions --------
-
+    # ===== Навигация =====
     def open(self):
         self.driver.get(self.URL)
+        self.wait_page_loaded()
 
     def go_to_add_card(self):
+        super().wait_until_loaded(self.ADD_CARD_LINK)
         self.driver.find_element(*self.ADD_CARD_LINK).click()
 
     def go_to_home(self):
         self.driver.find_element(*self.HOME_LINK).click()
 
-    def edit_card(self, card_id):
-        self.driver.find_element(
-            By.CSS_SELECTOR, f'a[href="/cards/edit/{card_id}"]'
-        ).click()
+    # ===== Ожидания =====
+    def wait_page_loaded(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.ADD_CARD_LINK)
+        )
 
-    def delete_card(self, card_id):
-        self.driver.find_element(
-            By.CSS_SELECTOR, f'a[href="/cards/delete/{card_id}"]'
-        ).click()
-
-    # -------- assertions helpers --------
-
-    def is_card_present(self, card_name):
+    # ===== Работа с таблицей =====
+    def get_table_rows(self):
+        """Возвращает все строки таблицы (без заголовка)"""
         rows = self.driver.find_elements(*self.TABLE_ROWS)
-        return any(card_name in row.text for row in rows)
+        return rows[1:]  # первая строка — заголовок
 
-    def get_cards_count(self):
-        # минус заголовок таблицы
-        return len(self.driver.find_elements(*self.TABLE_ROWS)) - 1
+    def get_rows_count(self):
+        return len(self.get_table_rows())
+
+    def is_card_present(self, card_data: dict) -> bool:
+        rows = self.get_table_rows()
+
+        for row in rows:
+            row_text = row.text
+            if all(str(value) in row_text for value in card_data.values()):
+                return True
+
+        return False
+
+    def click_edit_by_name(self, name: str):
+        rows = self.get_table_rows()
+        for row in rows:
+            if name in row.text:
+                row.find_element(By.LINK_TEXT, "✏️").click()
+                return
+        raise AssertionError(f"Карточка с именем '{name}' не найдена")
+
+    def click_delete_by_name(self, name: str):
+        rows = self.get_table_rows()
+        for row in rows:
+            if name in row.text:
+                row.find_element(By.LINK_TEXT, "🗑️").click()
+                return
+        raise AssertionError(f"Карточка с именем '{name}' не найдена")
+
+    def is_card_present_flexible(self, data: dict):
+        return super().is_data_present_flexible(data)
+
+    def has_number_of_rows(self, expected_count, include_header=False):
+        super().has_number_of_rows(expected_count)

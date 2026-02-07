@@ -36,29 +36,11 @@ class CoachesPage(BasePage):
         ).click()
 
     def get_number_of_coaches(self):
-        """
-        Количество тренеров (без заголовка)
-        """
         rows = self.driver.find_elements(*self.TABLE_ROWS)
         return len(rows) - 1
 
-    def is_coach_present_flexible(self, coach_data: dict) -> bool:
-        """
-        Проверяет, что в таблице есть строка,
-        содержащая все значения из coach_data (порядок не важен)
-        """
-        rows = self.driver.find_elements(*self.TABLE_ROWS)[1:]  # без заголовка
-
-        expected_values = [
-            str(value) for value in coach_data.values() if value not in ("", None)
-        ]
-
-        for row in rows:
-            row_text = row.text
-            if all(value in row_text for value in expected_values):
-                return True
-
-        return False
+    def is_coach_present_flexible(self, coach_data: dict):
+        return super().is_data_present_flexible(coach_data)
 
     def click_action_for_coach(self, coach_id: str | int, action: str):
         """
@@ -91,4 +73,4 @@ class CoachesPage(BasePage):
         return False
 
     def has_number_of_rows(self, expected_count, include_header=False):
-        super().has_number_of_rows(include_header)
+        super().has_number_of_rows(expected_count)

@@ -1,9 +1,4 @@
-import time
-
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
 from pages.base_page import BasePage
 
 
@@ -54,20 +49,8 @@ class StudentsPage(BasePage):
         return any(full_name in row.text for row in rows)
 
     # -------- flexible check --------
-    def is_student_present_flexible(self, student_data: dict):
-        time.sleep(0.5)
-        rows = self.driver.find_elements(*self.TABLE_ROWS)
-        for row in rows[1:]:  # пропускаем заголовок
-            row_text = row.text
-            if all(str(value) in row_text for value in student_data.values()):
-                return True
-        return False
-
-    def get_number_of_rows(self, include_header=False):
-        rows = self.driver.find_elements(*self.TABLE_ROWS)
-        if not include_header:
-            return len(rows) - 1  # вычитаем заголовок
-        return len(rows)
+    def is_data_present_flexible(self, data: dict):
+        return super().is_data_present_flexible(data)
 
     def has_number_of_rows(self, expected_count, include_header=False):
-        super().has_number_of_rows(include_header)
+        super().has_number_of_rows(expected_count)
