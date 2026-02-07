@@ -1,5 +1,4 @@
 from pages.add_student_page import AddStudentPage
-from pages.cards_page import CardsPage
 from pages.main_page import MainPage
 from pages.students_page import StudentsPage
 

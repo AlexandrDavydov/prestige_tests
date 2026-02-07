@@ -12,17 +12,23 @@ class BasePage:
         self.wait_until_loaded()
 
     def wait_until_loaded(self, locator=None, timeout=10):
-        """
-        Универсальный метод ожидания загрузки страницы.
-        Если locator указан, ждём появления элемента (лучше всего ключевого для страницы),
-        иначе ждём готовности документа (DOM ready).
-        """
         if locator:
             WebDriverWait(self.driver, timeout).until(
                 EC.presence_of_element_located(locator)
             )
         else:
-            # ждём, пока документ полностью загрузится
             WebDriverWait(self.driver, timeout).until(
                 lambda d: d.execute_script("return document.readyState") == "complete"
             )
+    def get_number_of_rows(self, include_header=False):
+        """
+        Возвращает количество строк в таблице
+        :param include_header: True — считает заголовок, False — только данные
+        """
+        rows = self.driver.find_elements(*self.TABLE_ROWS)
+        if not include_header:
+            return len(rows) - 1  # вычитаем заголовок
+        return len(rows)
+
+    def has_number_of_rows(self, expected_count, include_header=False):
+        return self.get_number_of_rows(include_header) == expected_count

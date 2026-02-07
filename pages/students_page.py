@@ -55,19 +55,6 @@ class StudentsPage(BasePage):
 
     # -------- flexible check --------
     def is_student_present_flexible(self, student_data: dict):
-        """
-        student_data: словарь полей и значений, которые нужно найти
-        Пример:
-        {
-            "last_name": "Иванов",
-            "first_name": "Иван",
-            "middle_name": "Иванович",
-            "contacts": "123456789",
-            "birthday": "2010-04-05",
-            "lessons_count": "10",
-            "additional_info": "Пробный"
-        }
-        """
         time.sleep(0.5)
         rows = self.driver.find_elements(*self.TABLE_ROWS)
         for row in rows[1:]:  # пропускаем заголовок
@@ -77,17 +64,10 @@ class StudentsPage(BasePage):
         return False
 
     def get_number_of_rows(self, include_header=False):
-        """
-        Возвращает количество строк в таблице
-        :param include_header: True — считает заголовок, False — только данные
-        """
         rows = self.driver.find_elements(*self.TABLE_ROWS)
         if not include_header:
             return len(rows) - 1  # вычитаем заголовок
         return len(rows)
 
     def has_number_of_rows(self, expected_count, include_header=False):
-        """
-        Проверяет, что в таблице ровно expected_count строк
-        """
-        return self.get_number_of_rows(include_header) == expected_count
+        super().has_number_of_rows(include_header)

@@ -60,7 +60,6 @@ class AddStudentPage(BasePage):
     def go_back(self):
         self.driver.find_element(*self.BACK_LINK).click()
 
-    # -------- helper --------
     def fill_form(self, last_name, first_name, middle_name="", contacts="",
                   birthday="", lessons_count=0, additional_info=""):
         self.set_last_name(last_name)
