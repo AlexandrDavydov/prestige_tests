@@ -1,5 +1,6 @@
 from pages.add_coach_page import AddCoachPage
 from pages.coaches_page import CoachesPage
+from pages.login_page import LoginPage
 from pages.main_page import MainPage
 
 def test_add_coaches(driver):
@@ -38,8 +39,11 @@ def test_add_coaches(driver):
             "additional_info": ""
         },
     ]
+    page = LoginPage(driver)
+    page.open()
+    page.login(page.getUsername(), page.getPassword())
+
     main_page = MainPage(driver)
-    main_page.open()
     main_page.go_to_coaches()
 
     for coach in coaches:

@@ -1,5 +1,6 @@
 from pages.add_card_page import AddCardPage
 from pages.cards_page import CardsPage
+from pages.login_page import LoginPage
 from pages.main_page import MainPage
 
 
@@ -94,8 +95,11 @@ def test_add_cards(driver):
             "status": "Активна"
         },
     ]
+    page = LoginPage(driver)
+    page.open()
+    page.login(page.getUsername(), page.getPassword())
+
     main_page = MainPage(driver)
-    main_page.open()
     main_page.go_to_cards()
 
     for card in cards:

@@ -1,4 +1,5 @@
 from pages.add_student_page import AddStudentPage
+from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.students_page import StudentsPage
 
@@ -133,9 +134,13 @@ def test_add_students(driver):
         },
 
     ]
-    main_page = MainPage(driver)
-    main_page.open()
-    main_page.go_to_students()
+
+    page = LoginPage(driver)
+    page.open()
+    page.login(page.getUsername(), page.getPassword())
+
+    page = MainPage(driver)
+    page.go_to_students()
 
     for student in students:
         page = StudentsPage(driver)

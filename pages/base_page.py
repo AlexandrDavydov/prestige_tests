@@ -5,8 +5,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage:
-
+    USERNAME = "admin"
+    PASSWORD = "g@z"
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
+
+    def getUsername(self):
+        return self.USERNAME
+    def getPassword(self):
+        return self.PASSWORD
 
     def __init__(self, driver, url=None):
         self.driver = driver
