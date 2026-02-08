@@ -2,7 +2,7 @@ from pages.add_coach_page import AddCoachPage
 from pages.coaches_page import CoachesPage
 from pages.main_page import MainPage
 
-def test_add_students(driver):
+def test_add_coaches(driver):
     coaches = [
         {
             "last_name": "Давыдова",

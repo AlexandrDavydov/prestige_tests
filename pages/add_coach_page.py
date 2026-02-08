@@ -74,21 +74,12 @@ class AddCoachPage(BasePage):
 
     def fill_form(self, last_name, first_name, middle_name="", contacts="",
                   birthday="", lessons_count=0, lessons_paid=0, student_payment=0, additional_info=""):
-        if last_name:
-            self.fill_last_name(last_name)
-        if first_name:
-            self.fill_first_name(first_name)
-        if middle_name:
-            self.fill_middle_name(middle_name)
-        if contacts:
-            self.fill_contacts(contacts)
-        if birthday :
-            self.fill_birthday(birthday)
-        if lessons_count:
-            self.fill_lessons_count(lessons_count)
-        if lessons_paid:
-            self.fill_lessons_paid(lessons_paid)
-        if student_payment:
-            self.fill_student_payment(student_payment)
-        if additional_info:
-            self.fill_additional_info(additional_info)
+        self.fill_last_name(last_name)
+        self.fill_first_name(first_name)
+        self.fill_middle_name(middle_name)
+        self.fill_contacts(contacts)
+        self.fill_birthday(birthday)
+        self.fill_lessons_count(lessons_count)
+        self.fill_lessons_paid(lessons_paid)
+        self.fill_student_payment(student_payment)
+        self.fill_additional_info(additional_info)

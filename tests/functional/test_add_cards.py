@@ -1,12 +1,9 @@
 from pages.add_card_page import AddCardPage
-from pages.add_coach_page import AddCoachPage
 from pages.cards_page import CardsPage
-from pages.coaches_page import CoachesPage
 from pages.main_page import MainPage
-from pages.students_page import StudentsPage
 
 
-def test_add_students(driver):
+def test_add_cards(driver):
     cards = [
         {
             "name": "4 занятия",

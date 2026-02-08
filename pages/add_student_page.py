@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
-
 from pages.base_page import BasePage
-
 
 class AddStudentPage(BasePage):
     URL = "http://127.0.0.1:5000/students/add"
@@ -64,13 +62,8 @@ class AddStudentPage(BasePage):
                   birthday="", lessons_count=0, additional_info=""):
         self.set_last_name(last_name)
         self.set_first_name(first_name)
-        if middle_name:
-            self.set_middle_name(middle_name)
-        if contacts:
-            self.set_contacts(contacts)
-        if birthday:
-            self.set_birthday(birthday)
-        if lessons_count:
-            self.set_lessons_count(lessons_count)
-        if additional_info:
-            self.set_additional_info(additional_info)
+        self.set_middle_name(middle_name)
+        self.set_contacts(contacts)
+        self.set_birthday(birthday)
+        self.set_lessons_count(lessons_count)
+        self.set_additional_info(additional_info)
