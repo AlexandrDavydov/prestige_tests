@@ -9,9 +9,9 @@ class CardsPage(BasePage):
     URL = "http://127.0.0.1:5000/cards"
 
     # ===== Локаторы =====
-    ADD_CARD_LINK = (By.LINK_TEXT, "Добавить Абонемент")
+    ADD_CARD_LINK = (By.XPATH, "//a[contains(text(), 'Добавить Абонемент')]")
+    HOME_LINK = (By.XPATH, "//a[contains(text(), 'Главная')]")
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
-    HOME_LINK = (By.LINK_TEXT, "Главная")
 
     def __init__(self, driver):
         self.driver = driver

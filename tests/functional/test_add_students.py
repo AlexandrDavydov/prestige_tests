@@ -3,7 +3,6 @@ from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.students_page import StudentsPage
 
-
 def test_add_students(driver):
     students = [
         {
@@ -12,7 +11,7 @@ def test_add_students(driver):
             "middle_name": "Александровна",
             "contacts": "+79398518023",
             "birthday": "29.10.2010",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -21,7 +20,7 @@ def test_add_students(driver):
             "middle_name": "Георгиевна",
             "contacts": "123456789",
             "birthday": "05.04.2010",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -30,7 +29,7 @@ def test_add_students(driver):
             "middle_name": "Ильинична",
             "contacts": "987654321",
             "birthday": "12.06.2011",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -39,7 +38,7 @@ def test_add_students(driver):
             "middle_name": "Игоревна",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -48,7 +47,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -57,7 +56,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -66,7 +65,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -75,7 +74,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -84,7 +83,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -93,7 +92,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -102,7 +101,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -111,7 +110,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -120,7 +119,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -129,7 +128,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -138,7 +137,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -147,7 +146,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -156,7 +155,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -165,7 +164,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -174,7 +173,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -183,7 +182,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -192,7 +191,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -201,7 +200,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -210,7 +209,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -219,7 +218,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -228,7 +227,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -237,7 +236,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -246,7 +245,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -255,7 +254,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -264,7 +263,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -273,7 +272,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -282,7 +281,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -291,7 +290,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -300,7 +299,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -309,7 +308,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -318,7 +317,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -327,7 +326,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -336,7 +335,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -345,7 +344,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -354,7 +353,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -363,7 +362,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -372,7 +371,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -381,7 +380,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -390,7 +389,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -399,7 +398,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -408,7 +407,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -417,7 +416,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -426,7 +425,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -435,7 +434,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -444,7 +443,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -453,7 +452,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -462,7 +461,7 @@ def test_add_students(driver):
             "middle_name": "Васильевна",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -471,7 +470,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -480,7 +479,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -489,7 +488,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -498,7 +497,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -507,7 +506,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -516,7 +515,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -525,7 +524,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -534,7 +533,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -543,7 +542,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -552,7 +551,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -561,7 +560,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -570,7 +569,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -579,7 +578,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -588,7 +587,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -597,7 +596,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -606,7 +605,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -615,7 +614,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -624,7 +623,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -633,7 +632,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -642,7 +641,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -651,7 +650,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -660,7 +659,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -669,7 +668,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -678,7 +677,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -687,7 +686,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -696,7 +695,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -705,7 +704,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -714,7 +713,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -723,7 +722,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -732,7 +731,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -741,7 +740,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -750,7 +749,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -759,7 +758,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -768,7 +767,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -777,7 +776,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -786,7 +785,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -795,7 +794,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -804,7 +803,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -813,7 +812,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -822,7 +821,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         },
         {
@@ -831,7 +830,7 @@ def test_add_students(driver):
             "middle_name": "",
             "contacts": "",
             "birthday": "",
-            "lessons_count": 0,
+            "lessons_count": 10,
             "additional_info": ""
         }
     ]
