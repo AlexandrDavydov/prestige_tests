@@ -15,7 +15,7 @@ class AddCardPage:
     STATUS_SELECT = (By.NAME, "status")
 
     SUBMIT_BUTTON = (By.XPATH, "//button[@type='submit']")
-    BACK_LINK = (By.LINK_TEXT, "Назад")
+    BACK_LINK = (By.XPATH, "//a[contains(text(), 'Назад')]")
 
     def __init__(self, driver):
         self.driver = driver

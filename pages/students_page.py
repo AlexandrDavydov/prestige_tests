@@ -6,8 +6,8 @@ class StudentsPage(BasePage):
     URL = "http://127.0.0.1:5000/students"
 
     # -------- locators --------
-    ADD_STUDENT_LINK = (By.LINK_TEXT, "Добавить ученика")
-    HOME_LINK = (By.LINK_TEXT, "Главная")
+    ADD_STUDENT_LINK = (By.XPATH, "//a[contains(text(), 'Добавить ученика')]")
+    HOME_LINK = (By.XPATH, "//a[contains(text(), 'Главная')]")
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
 
     def __init__(self, driver):
