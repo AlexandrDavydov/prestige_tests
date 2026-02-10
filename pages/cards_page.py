@@ -19,7 +19,7 @@ class CardsPage(BasePage):
     # ===== Навигация =====
     def open(self):
         self.driver.get(self.URL)
-        self.wait_page_loaded()
+        super().wait_until_loaded(self.ADD_CARD_LINK)
 
     def go_to_add_card(self):
         super().wait_until_loaded(self.ADD_CARD_LINK)
@@ -27,12 +27,6 @@ class CardsPage(BasePage):
 
     def go_to_home(self):
         self.driver.find_element(*self.HOME_LINK).click()
-
-    # ===== Ожидания =====
-    def wait_page_loaded(self):
-        WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located(self.ADD_CARD_LINK)
-        )
 
     # ===== Работа с таблицей =====
     def get_table_rows(self):

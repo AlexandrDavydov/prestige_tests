@@ -832,7 +832,25 @@ def test_add_students(driver):
             "birthday": "",
             "lessons_count": 10,
             "additional_info": ""
-        }
+        },
+        {
+            "last_name": "Борисенко",
+            "first_name": "Софья",
+            "middle_name": "",
+            "contacts": "",
+            "birthday": "",
+            "lessons_count": 10,
+            "additional_info": ""
+        },
+        {
+            "last_name": "Молчанова",
+            "first_name": "Варвара",
+            "middle_name": "",
+            "contacts": "",
+            "birthday": "",
+            "lessons_count": 10,
+            "additional_info": ""
+        },
     ]
 
     page = LoginPage(driver)
