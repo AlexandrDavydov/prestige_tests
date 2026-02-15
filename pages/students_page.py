@@ -1,3 +1,5 @@
+from time import sleep
+
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from tests.data.students_data import STUDENTS
@@ -75,3 +77,9 @@ class StudentsPage(BasePage):
             cells = row.find_elements(By.TAG_NAME, "td")
             l_count = cells[6]
             assert l_count.text == lessons_count
+
+    def get_student_lessons_count(self, last_name:str, first_name: str) :
+        sleep(0.5)
+        row = self.find_student_row(last_name, first_name)
+        cells = row.find_elements(By.TAG_NAME, "td")
+        return int(cells[6].text)

@@ -27,13 +27,8 @@ class BuyCardPage:
 
     # ===== Купить карточку по имени =====
     def buy_card_by_name(self, card_name):
-        """
-        Нажимает карточку по названию
-        """
         self.wait_page_loaded()
-
         forms = self.driver.find_elements(*self.CARD_FORMS)
-
         for form in forms:
             block = form.find_element(By.XPATH, ".//div")
 
