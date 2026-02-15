@@ -1,11 +1,4 @@
-from pages.add_lesson_template_page import AddLessonTemplatePage
-from pages.lesson_templates_page import LessonTemplatesPage
-from pages.login_page import LoginPage
-from pages.main_page import MainPage
-
-
-def test_add_cards(driver):
-    lesson_templates = [
+LESSON_TEMPLATES = [
         {
             "template_name": "Понедельник 15:00 Юлия",
             "coach_id": 1,
@@ -132,24 +125,3 @@ def test_add_cards(driver):
             "student_ids": "1,4,47,56,10,13,5,48,57,58,59,60,6,11,93"
         }
     ]
-    page = LoginPage(driver)
-    page.open()
-    page.login(page.getUsername(), page.getPassword())
-
-    main_page = MainPage(driver)
-    main_page.go_to_templates()
-
-    for template in lesson_templates:
-        page = LessonTemplatesPage(driver)
-        page.go_to_add_template()
-        page=AddLessonTemplatePage(driver)
-        page.fill_form(template["template_name"], template["coach_id"], template["student_ids"])
-        page.submit()
-
-    page = LessonTemplatesPage(driver)
-    #for template in lesson_templates:
-        #assert page.is_template_present_flexible(template)
-
-    page.has_number_of_rows(len(lesson_templates))
-
-

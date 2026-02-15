@@ -10,6 +10,7 @@ class LessonsPage(BasePage):
     # ===== ЛОКАТОРЫ =====
     ADD_LESSON_LINK = (By.LINK_TEXT, "➕ Добавить занятие")
 
+
     STATUS_FILTER = (By.ID, "status_filter")
 
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
@@ -25,7 +26,7 @@ class LessonsPage(BasePage):
     # ===== БАЗОВЫЕ =====
     def open(self):
         self.driver.get(self.URL)
-        self.wait_until_loaded(self.STATUS_FILTER)
+        self.wait_until_loaded(self.ADD_LESSON_LINK)
 
     # ===== ДЕЙСТВИЯ =====
     def go_to_add_lesson(self):
@@ -36,6 +37,7 @@ class LessonsPage(BasePage):
         select.select_by_visible_text(status)
 
     def add_from_template(self, template_name: str):
+        super().wait_until_clickable(self.TEMPLATE_SELECT)
         select = Select(self.wait_until_visible(self.TEMPLATE_SELECT))
         select.select_by_visible_text(template_name)
         self.ADD_FROM_TEMPLATE_BTN_CLICK()
@@ -65,9 +67,22 @@ class LessonsPage(BasePage):
                 return row
         raise AssertionError(f"Занятие с id={lesson_id} не найдено")
 
-    def mark_done(self, lesson_id: int):
-        row = self._find_row_by_id(lesson_id)
-        row.find_element(*self.DONE_ICON).click()
+    def _find_row_by_name(self, lesson_name: str):
+        for row in self.get_rows():
+            if str(lesson_name) in row.text:
+                return row
+        raise AssertionError(f"Занятие с именем={lesson_name} не найдено")
+
+    def row_by_name_present(self, lesson_name: str, presents: bool):
+        found: bool = False
+        for row in self.get_rows():
+            if str(lesson_name) in row.text:
+                found = True
+        assert presents == found
+
+    def mark_as_done(self, lesson_name: str):
+        row = self._find_row_by_name(lesson_name)
+        row.find_element(By.XPATH, "following-sibling::tr").find_element(*self.DONE_ICON).click()
 
     def edit_lesson(self, lesson_id: int):
         row = self._find_row_by_id(lesson_id)

@@ -3,7 +3,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from tests.data.coaches_data import COACHES
 from pages.base_page import BasePage
 
 
@@ -74,3 +74,20 @@ class CoachesPage(BasePage):
 
     def has_number_of_rows(self, expected_count, include_header=False):
         super().has_number_of_rows(expected_count)
+
+    def find_coach_row(self, last_name, first_name):
+        # ищем все строки таблицы, кроме заголовка
+        rows = self.driver.find_elements(By.XPATH, "//tr")
+
+        for row in rows:
+            cells = row.find_elements(By.TAG_NAME, "td")
+            if len(cells) >= 3:
+                if cells[1].text == last_name and cells[2].text == first_name:
+                    return row  # возвращаем WebElement строки
+        return None
+
+    def check_coaches_lessons_count(self, lessons_count: str, payment:str) :
+            row = self.find_coach_row(COACHES[0]["last_name"], COACHES[0]["first_name"])
+            cells = row.find_elements(By.TAG_NAME, "td")
+            assert cells[6].text == lessons_count
+            assert cells[10].text == payment

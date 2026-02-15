@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+from tests.data.students_data import STUDENTS
 
 
 class StudentsPage(BasePage):
@@ -54,3 +55,23 @@ class StudentsPage(BasePage):
 
     def has_number_of_rows(self, expected_count, include_header=False):
         super().has_number_of_rows(expected_count)
+
+    def find_student_row(self, last_name, first_name):
+        # ищем все строки таблицы, кроме заголовка
+        rows = self.driver.find_elements(By.XPATH, "//tr")
+
+        for row in rows:
+            cells = row.find_elements(By.TAG_NAME, "td")
+            if len(cells) >= 3:
+                if cells[1].text == last_name and cells[2].text == first_name:
+                    return row  # возвращаем WebElement строки
+        return None
+
+    def check_students_lessons_count(self, students:str, lessons_count: str) :
+        students_array = [int(x) for x in students.split(",")]
+        for index, value in enumerate(students_array):
+            student_id = value-1
+            row = self.find_student_row(STUDENTS[student_id]["last_name"], STUDENTS[student_id]["first_name"])
+            cells = row.find_elements(By.TAG_NAME, "td")
+            l_count = cells[6]
+            assert l_count.text == lessons_count

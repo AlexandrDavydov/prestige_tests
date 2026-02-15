@@ -9,10 +9,34 @@ class BasePage:
     PASSWORD = "g@z"
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
 
+    MAIN_PAGE_LINK = (By.XPATH, "//a[contains(text(), 'Главная')]")
+    CARDS_LINK = (By.XPATH, "//a[contains(text(), 'Абонементы')]")
+    LESSON_TEMPLATES_LINK = (By.XPATH, "//a[contains(text(), 'Шаблоны занятий')]")
+    STUDENTS_LINK = (By.XPATH, "//a[contains(text(), 'Ученики')]")
+    COACHES_LINK = (By.XPATH, "//a[contains(text(), 'Тренеры')]")
+    LESSONS_LINK = (By.XPATH, "//a[contains(text(), 'Занятия')]")
+
     def getUsername(self):
         return self.USERNAME
+
     def getPassword(self):
         return self.PASSWORD
+
+    def go_to_lessons(self):
+        self.wait_until_loaded(self.LESSONS_LINK)
+        self.driver.find_element(*self.LESSONS_LINK).click()
+
+    def go_to_students(self):
+        self.wait_until_loaded(self.STUDENTS_LINK)
+        self.driver.find_element(*self.STUDENTS_LINK).click()
+
+    def goto_main_page(self):
+        self.wait_until_loaded(self.MAIN_PAGE_LINK)
+        self.wait_until_clickable(self.MAIN_PAGE_LINK).click()
+
+    def go_to_cards(self):
+        self.wait_until_loaded(self.CARDS_LINK)
+        self.driver.find_element(*self.CARDS_LINK).click()
 
     def __init__(self, driver, url=None):
         self.driver = driver
@@ -32,6 +56,16 @@ class BasePage:
             WebDriverWait(self.driver, timeout).until(
                 lambda d: d.execute_script("return document.readyState") == "complete"
             )
+
+    def wait_until_visible(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located(locator)
+        )
+
+    def wait_until_clickable(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.element_to_be_clickable(locator)
+        )
 
     def is_data_present_flexible(self, data: dict):
         time.sleep(0.5)

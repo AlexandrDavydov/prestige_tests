@@ -14,14 +14,7 @@ class AddLessonTemplatePage:
     COACH_SELECT = (By.NAME, "coach_id")
     STUDENT_CHECKBOXES = (By.NAME, "student_ids")
 
-    SAVE_BUTTON = (
-        By.XPATH,
-        "//button[contains(text(), 'Сохранить')]"
-    )
-
-    BACK_LINK = (
-        By.XPATH,
-        "//a[contains(text(), 'Назад')]"
+    SAVE_BUTTON = (By.XPATH,"//button[contains(text(), 'Сохранить')]"
     )
 
     # ===== ОЖИДАНИЕ =====
@@ -55,9 +48,6 @@ class AddLessonTemplatePage:
 
     def submit(self):
         self.driver.find_element(*self.SAVE_BUTTON).click()
-
-    def go_back(self):
-        self.driver.find_element(*self.BACK_LINK).click()
 
     # ===== УДОБНЫЙ КОМБО-МЕТОД =====
     def fill_form(self, template_name: str, coach_id: int , student_ids: str):
