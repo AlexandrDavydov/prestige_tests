@@ -9,12 +9,12 @@ class BasePage:
     PASSWORD = "g@z"
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
 
-    MAIN_PAGE_LINK = (By.XPATH, "//a[contains(text(), 'Главная')]")
-    CARDS_LINK = (By.XPATH, "//a[contains(text(), 'Абонементы')]")
-    LESSON_TEMPLATES_LINK = (By.XPATH, "//a[contains(text(), 'Шаблоны занятий')]")
-    STUDENTS_LINK = (By.XPATH, "//a[contains(text(), 'Ученики')]")
-    COACHES_LINK = (By.XPATH, "//a[contains(text(), 'Тренеры')]")
-    LESSONS_LINK = (By.XPATH, "//a[contains(text(), 'Занятия')]")
+    MAIN_PAGE_LINK = By.XPATH, "//nav//a[contains(., 'Главная')]"
+    CARDS_LINK = By.XPATH, "//nav//a[contains(., 'Абонементы')]"
+    LESSON_TEMPLATES_LINK = By.XPATH, "//nav//a[contains(., 'Шаблоны занятий')]"
+    STUDENTS_LINK = By.XPATH, "//nav//a[contains(., 'Ученики')]"
+    COACHES_LINK = By.XPATH, "//nav//a[contains(., 'Тренеры')]"
+    LESSONS_LINK = By.XPATH, "//nav//a[contains(., 'Занятия')]"
 
     def getUsername(self):
         return self.USERNAME
