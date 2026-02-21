@@ -456,12 +456,12 @@ def add_card_lessons_to_student(card_id, student_id):
     conn.commit()
     conn.close()
 
-def store_purchased_card(card_id, student_id):
+def store_purchased_card(date, card_id, student_id):
     conn = get_connection()
     conn.execute("""
         INSERT INTO sold_cards (date, card_id, student_id)
         VALUES (?, ?, ?)
-    """, (datetime.now().strftime("%Y-%m-%d"), card_id, student_id))
+    """, (date, card_id, student_id))
     conn.commit()
     conn.close()
 

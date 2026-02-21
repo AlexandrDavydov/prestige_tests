@@ -2,6 +2,7 @@ import database as db
 from tests.data.cards_data import CARDS
 from tests.data.coaches_data import COACHES
 from tests.data.lesson_templates_data import LESSON_TEMPLATES
+from tests.data.sold_cards import SOLD_CARDS
 from tests.data.students_data import STUDENTS
 
 
@@ -18,3 +19,6 @@ def test_add_cards():
 
     for lesson_template in LESSON_TEMPLATES:
         db.add_lesson_template(lesson_template["template_name"], lesson_template["coach_id"], lesson_template["student_ids"].split(","))
+
+    for sold_card in SOLD_CARDS:
+        db.store_purchased_card(sold_card["date"], sold_card["card_id"], sold_card["student_id"])
