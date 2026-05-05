@@ -43,8 +43,9 @@ class AddCardPage:
         self._type(self.DURATION_INPUT, duration)
         self._type(self.COLOR_INPUT, color)
 
-        select = Select(self.driver.find_element(*self.STATUS_SELECT))
-        select.select_by_visible_text(status)
+        status_select = self.driver.find_elements(*self.STATUS_SELECT)
+        if status_select:
+            Select(status_select[0]).select_by_visible_text(status)
 
     def submit(self):
         self.driver.find_element(*self.SUBMIT_BUTTON).click()

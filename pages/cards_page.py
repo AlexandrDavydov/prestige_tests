@@ -9,7 +9,7 @@ class CardsPage(BasePage):
     URL = "http://127.0.0.1:5000/cards"
 
     # ===== Локаторы =====
-    ADD_CARD_LINK = (By.XPATH, "//a[contains(text(), 'Добавить Абонемент')]")
+    ADD_CARD_LINK = (By.XPATH, "//a[contains(@href, '/cards/add') or @title='Добавить абонемент']")
     HOME_LINK = (By.XPATH, "//a[contains(text(), 'Главная')]")
     TABLE_ROWS = (By.CSS_SELECTOR, "table tr")
 
@@ -64,7 +64,12 @@ class CardsPage(BasePage):
         raise AssertionError(f"Карточка с именем '{name}' не найдена")
 
     def is_card_present_flexible(self, data: dict):
-        return super().is_data_present_flexible(data)
+        visible_data = {
+            key: data[key]
+            for key in ("name", "price", "lessons_count", "duration")
+            if key in data
+        }
+        return super().is_data_present_flexible(visible_data)
 
     def has_number_of_rows(self, expected_count, include_header=False):
-        super().has_number_of_rows(expected_count)
+        return super().has_number_of_rows(expected_count, include_header)
